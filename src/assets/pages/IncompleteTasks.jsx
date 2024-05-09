@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import TaskContext from '../context/TaskContext'
 
 const IncompleteTasks = () => {
+  const { tasks } = useContext(TaskContext) 
+  const IncompleteTasks = tasks.filter((task) => task.isTaskDone)
+
   return (
-    <div>IncompleteTasks</div>
+    <>
+      <h3>Incomplete Tasks</h3>
+      {IncompleteTasks.map((task) => (
+        <ul >
+          <li key={task.id}>{task.TaskContent}</li>
+        </ul>
+      ))}
+    </>
   )
 }
 
