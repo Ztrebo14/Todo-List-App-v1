@@ -13,7 +13,7 @@ const addTask = () => {
         const taskObj = {
             id: uuidv4(),
             taskContent: taskName,
-            isTaskDone: true
+            isTaskDone: false
         }
         setTasks([...tasks,  taskObj])
         handleTaskChange('')
