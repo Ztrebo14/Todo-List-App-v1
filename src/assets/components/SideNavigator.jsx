@@ -15,7 +15,9 @@ const SideNavigator = () => {
           <NavLink to={'/incomplete-tasks'}>Incomplete Tasks</NavLink>
         </div>
       </div>
+      <div className="outlet-content">
         <Outlet/>
+      </div>
     </div>
     </>
   )
