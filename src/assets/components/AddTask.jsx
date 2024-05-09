@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import TaskContext from '../context/TaskContext'
+import { v4 as uuidv4 } from 'uuid' 
 
 const addTask = () => {
     const { taskName, handleTaskChange, tasks, setTasks } = useContext(TaskContext)
@@ -9,8 +10,13 @@ const addTask = () => {
     }
 
     const handleSubmit = () => {
-        setTasks([...tasks, taskName ])
-        handleTaskChange(' ')
+        const taskObj = {
+            id: uuidv4(),
+            taskContent: taskName,
+            isTaskDone: true
+        }
+        setTasks([...tasks,  taskObj])
+        handleTaskChange('')
     }
 
   return (
