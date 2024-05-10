@@ -19,9 +19,15 @@ const addTask = () => {
         handleTaskChange('')
     }
 
+    const handleKeyDown = e => {
+        if (e.key === 'Enter') {
+            handleSubmit()
+        }
+    }
+
   return (
     <>
-        <input type="text" value={taskName} onChange={handleInput}/>
+        <input type="text" value={taskName} onKeyDown={handleKeyDown} onChange={handleInput}/>
         <button onClick={handleSubmit}>Add Task</button>
     </>
   )

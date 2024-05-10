@@ -1,0 +1,18 @@
+.displaytask-comp-container li {
+    
+
+}
+
+.displaytask-comp-container li p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.displaytask-comp-container ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: greenyellow;
+    margin: 10px 0 10px 0;
+    border-radius: 10px;
+
+}
