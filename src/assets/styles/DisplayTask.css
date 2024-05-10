@@ -1,6 +1,5 @@
-.displaytask-comp-container li {
-    
-
+.displaytask-comp-container {
+    padding: 10px 0 0 0;
 }
 
 .displaytask-comp-container li p {
@@ -10,8 +9,30 @@
 
 .displaytask-comp-container ul {
     list-style-type: none;
-    padding: 0;
-    background-color: greenyellow;
+    padding: 7px 0 7px 0;
+    background-image: linear-gradient(rgb(164, 234, 0), green);
     margin: 10px 0 10px 0;
     border-radius: 10px;
+}
+
+.edit-delete-function {
+    display: flex;
+    justify-content: center;
+}
+
+.edit-delete-function li {
+    padding: 0 5px 0 5px;
+}
+
+.taskcontent-status {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0 0 10px 0;
+}
+
+.taskcontent-status li {
+    display: flex;
+    align-items: center;
+    padding: 0 5px 0 5px;
 }

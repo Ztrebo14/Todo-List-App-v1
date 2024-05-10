@@ -63,10 +63,24 @@ const DisplayTask = () => {
               </>
             ) : (
               <>
-                <li><p>{task.taskContent}</p></li>
-                <li><input type="checkbox" checked={task.isTaskDone} onChange={() => handleTaskStatus(task.id)} /></li>
-                <li><button onClick={() => handleEditContent(task)}>Edit</button></li>
-                <li><button onClick={() => handleDeleteTask(task.id)}>Delete</button></li>
+                <div className="taskcontent-status">
+                  <li><p>{task.taskContent}</p></li>
+                  <li>
+                    <input 
+                      type="checkbox" 
+                      checked={task.isTaskDone} 
+                      onChange={() => handleTaskStatus(task.id)} 
+                      style={{
+                        height: '20px',
+                        width: '20px'
+                      }}
+                    />
+                  </li>
+                </div>
+                <div className="edit-delete-function">
+                  <li><button onClick={() => handleEditContent(task)}>Edit</button></li>
+                  <li><button onClick={() => handleDeleteTask(task.id)}>Delete</button></li>
+                </div>
               </>
             )
           }
