@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import '../styles/CompleteTasks.css'
 import TaskContext from '../context/TaskContext'
 
 const CompleteTasks = () => {
@@ -6,12 +7,14 @@ const CompleteTasks = () => {
   const completedTask = tasks.filter((task) => task.isTaskDone)
   return (
     <>
-      <h3>Completed Tasks</h3>
-      { completedTask.map((task) => (
-        <ul key={task.id}>
-          <li >{task.taskContent}</li>
-        </ul>
-      )) }
+      <div className="completetask-container">
+        <h3>Completed Tasks</h3>
+        { completedTask.map((task) => (
+          <ul key={task.id}>
+            <li><p>{task.taskContent}</p></li>
+          </ul>
+        )) }
+      </div>
     </>
   )
 }
