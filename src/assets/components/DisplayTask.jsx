@@ -3,7 +3,7 @@ import '../styles/DisplayTask.css'
 import TaskContext from '../context/TaskContext'
 
 const DisplayTask = () => {
-  const { tasks, updateTaskStatus, updateTaskContent } = useContext(TaskContext)
+  const { tasks, updateTaskStatus, updateTaskContent, deleteTask } = useContext(TaskContext)
   const [ editingTaskId, setEditingTaskId ] = useState(null)
   const [ editedTaskContent, setEditedTaskContent] = useState('')
   
@@ -27,6 +27,16 @@ const DisplayTask = () => {
     setEditedTaskContent('')
   }
 
+  const handleKeyDown = (e, taskId) => {
+    if (e.key === 'Enter') {
+      handleSaveEdit(taskId)
+    }
+  }
+
+  const handleDeleteTask = (taskId) => {
+    deleteTask(taskId)
+  }
+
   const isEditing = (taskId) => {
     return taskId === editingTaskId
   }
@@ -42,6 +52,7 @@ const DisplayTask = () => {
                   <input
                     type="text"
                     value={editedTaskContent}
+                    onKeyDown={(e) => handleKeyDown(e, task.id)}
                     onChange={(e) => setEditedTaskContent(e.target.value)}
                   />
                 </li>
@@ -55,6 +66,7 @@ const DisplayTask = () => {
                 <li><p>{task.taskContent}</p></li>
                 <li><input type="checkbox" checked={task.isTaskDone} onChange={() => handleTaskStatus(task.id)} /></li>
                 <li><button onClick={() => handleEditContent(task)}>Edit</button></li>
+                <li><button onClick={() => handleDeleteTask(task.id)}>Delete</button></li>
               </>
             )
           }

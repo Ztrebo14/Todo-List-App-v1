@@ -26,6 +26,10 @@ export const TaskProvider = ({children}) => {
         )
     }
 
+    const deleteTask = (taskId) => {
+        setTasks((prevTask) => prevTask.filter((task) => task.id !== taskId))
+    }
+
   return (
     <>
         <TaskContext.Provider value={{
@@ -35,7 +39,8 @@ export const TaskProvider = ({children}) => {
             handleTaskChange,
             setTasks,
             updateTaskStatus,
-            updateTaskContent
+            updateTaskContent,
+            deleteTask
         }}>
             {children}
         </TaskContext.Provider>
