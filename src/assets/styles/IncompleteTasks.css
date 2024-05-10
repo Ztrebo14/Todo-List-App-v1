@@ -1,0 +1,20 @@
+.incompletetask-container {
+    text-align: center;
+}
+
+.incompletetask-container ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: greenyellow;
+    margin: 10px 0 10px 0;
+    border-radius: 10px;
+}
+
+.incompletetask-container li {
+    padding: 10px;
+}
+
+.incompletetask-container li p {
+    font-size: 20px;
+    font-weight: 600;
+}

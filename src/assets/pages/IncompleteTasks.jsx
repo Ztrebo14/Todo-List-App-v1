@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import '../styles/IncompleteTasks.css'
 import TaskContext from '../context/TaskContext'
 
 const IncompleteTasks = () => {
@@ -7,12 +8,14 @@ const IncompleteTasks = () => {
 
   return (
     <>
-      <h3>Incomplete Tasks</h3>
-      {IncompleteTasks.map((task) => (
-        <ul key={task.id}>
-          <li>{task.taskContent}</li>
-        </ul>
-      ))}
+      <div className="incompletetask-container">
+        <h3>Incomplete Tasks</h3>
+        {IncompleteTasks.map((task) => (
+          <ul key={task.id}>
+            <li><p>{task.taskContent}</p></li>
+          </ul>
+        ))}
+      </div>
     </>
   )
 }
