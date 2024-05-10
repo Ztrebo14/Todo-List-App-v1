@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import '../styles/AllTasks.css'
-import AddTask from '../components/addTask'
+import AddTask from '../components/AddTask'
 import DisplayTask from '../components/DisplayTask'
 
 const AllTasks = () => {
