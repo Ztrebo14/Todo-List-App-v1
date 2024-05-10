@@ -8,8 +8,8 @@ const CompleteTasks = () => {
     <>
       <h3>Completed Tasks</h3>
       { completedTask.map((task) => (
-        <ul >
-          <li key={task.id}>{task.taskContent}</li>
+        <ul key={task.id}>
+          <li >{task.taskContent}</li>
         </ul>
       )) }
     </>

@@ -10,7 +10,6 @@ const DisplayTask = () => {
 
   return (
     <>
-        <h3>Current Tasks:</h3>
         {tasks.map((task) => (
           <ul key={task.id}>
             <li>{task.taskContent}</li>
