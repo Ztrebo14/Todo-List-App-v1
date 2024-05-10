@@ -18,6 +18,13 @@ export const TaskProvider = ({children}) => {
         )
     }
 
+    const updateTaskContent = (taskId, newTaskContent) => {
+        setTasks((prevTask) => 
+            prevTask.map((task) =>
+                task.id === taskId ? { ...task, taskContent: newTaskContent} : task
+            )
+        )
+    }
 
   return (
     <>
@@ -27,7 +34,8 @@ export const TaskProvider = ({children}) => {
             setTaskName,
             handleTaskChange,
             setTasks,
-            updateTaskStatus
+            updateTaskStatus,
+            updateTaskContent
         }}>
             {children}
         </TaskContext.Provider>
